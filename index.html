@@ -17,9 +17,22 @@
     nav.classList.toggle('open');
   });
 
-//   function toggleMenu() {
-//       document.querySelector('.nav-links').classList.toggle('active');
-//     }
+    // New: Close menu when clicking on mobile links
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        document.body.style.overflow = '';
+    });
+    });
+
+    // New: Close menu when clicking outside (optional)
+    document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target)) {
+        nav.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    });
+
 </script>
 </head>
 <body>
@@ -27,6 +40,7 @@
     </header> -->
 
   <nav class="prime-nav">
+<<<<<<< HEAD
   <div class="nav-left">
     <!-- <img src="Images/logo.jpg" alt="Prime Video Logo" class="logo" /> -->
     <h3>Prime Video</h3>
@@ -41,27 +55,55 @@
       <li><p class="pole">|</p></li>
       <li><a href="subscription.html" class="subscriptions-link">Subscriptions</a></li>
     </ul>
+=======
+    <div class="nav-left">
+        <!-- <img src="Images/logo.jpg" alt="Prime Video Logo" class="logo" /> -->
+        <h3>Prime Video</h3>
+        <button class="nav-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span class="hamburger"></span>
+        </button>
+        <ul class="nav-links active">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="tvshows.html">TV shows</a></li>
+        <li><a href="livetv.html">Live TV</a></li>
+        <li><p class="pole">|</p></li>
+        <li><a href="subscription.html" class="subscriptions-link">Subscriptions</a></li>
+        </ul>
+
+        <div class="mobile-nav-menu">
+            <a href="#home-section" class="mobile-nav-link">Home</a>
+            <a href="#movies.html" class="mobile-nav-link">Movies</a>
+            <a href="tvshows.html#" class="mobile-nav-link">TV shows</a>
+            <a href="#livetv.html" class="mobile-nav-link">Live TV</a>
+            <a href="subscription.html" class="mobile-nav-link">Subscriptions</a>
+        </div>
+
+>>>>>>> 9192cb83e9f5c8d2416d5ccce12a9c92de1866c7
   </div>
   
 
-<div class="nav-right">
-    <button class="search-btn" aria-label="Search"></button>
-    <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
-    <select class="language-select" aria-label="Select Language">
-      <option value="en" selected>EN</option>
-      <option value="es">ES</option>
-      <option value="fr">FR</option>
-      <option value="fr">FR</option>
-      <option value="fr">FR</option>
-      <option value="fr">FR</option>
-    </select>
-    <!-- <button class="signin-btn">Sign In</button> -->
-    <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="User Avatar" class="user-avatar" /> -->
-    <!-- <i class="fa-thin fa-table-cells"></i> -->
-    <img src="HomeImages/user.svg" alt="User Avatar" class="user-avatar" />
-    <!-- <i class="fa-solid fa-user"></i> -->
-    <button class="join-prime-btn">Join Prime</button>
-  </div>
+    <div class="nav-right">
+        <button class="search-btn" aria-label="Search"></button>
+        <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+        <select class="language-select" aria-label="Select Language">
+        <option value="en" selected>EN</option>
+        <option value="es">ES</option>
+        <option value="fr">FR</option>
+        <option value="fr">FR</option>
+        <option value="fr">FR</option>
+        <option value="fr">FR</option>
+        </select>
+        <!-- <button class="signin-btn">Sign In</button> -->
+        <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="User Avatar" class="user-avatar" /> -->
+        <!-- <i class="fa-thin fa-table-cells"></i> -->
+         <button class="categories-btn">
+            <img src="HomeImages/categoriesImg.png" alt="Categories" width="16" height="16">
+        </button>
+        <img src="HomeImages/user.svg" alt="User Avatar" class="user-avatar" />
+        <!-- <i class="fa-solid fa-user"></i> -->
+        <button class="join-prime-btn">Join Prime</button>
+    </div>
 </nav> <br>
 
 
